@@ -1,0 +1,358 @@
+html{
+    background-color:var(--base-color);
+    background-image: url("background.jpg");
+}
+@font-face{
+    font-family: Jelee;                                 /* Define the custom font name */
+    src: url(Jellee-Bold.woff2)format('woff2'),
+         url(Jellee-Bold.woff)format('woff');           /* Define where the font can be found */
+    font-display: block;                                /* Define how the browser will behave while the custom font is being downloaded (In this case FOIT) */
+}
+:root{                                                  /* put all variables in the root*/
+    --base-color: #eca1a6;
+    --base-bgcolor:#ada397;
+    --main-color: #bdcebe;
+    --main-bgcolor:#d6cbd3;
+    --navtext-color:indigo;
+    --maintext-color: white;
+    --link-color: darkviolet;
+    --base-font-size:16px;
+}
+body{
+    display:grid;                                       /* Use grid type display to layout the page */
+    grid-template-columns: 1fr;                         /* The layout will have one column */
+    grid-template-areas:                                /* define 6 grid areas */
+        "top"
+        "middle-top"
+        "middle-middle"
+        "middle-bottom"
+        "bottom";
+    column-gap: 10px;
+    row-gap: 15px;
+    font-family: Jelee, Arial, Helvetica, sans-serif;   /* Define some back-up fonts for custom font in a font stack */
+    width: 100%;                                         /* set <body> with to 80% of the width of its parent ie. <html> */
+    background-color: var(--base-bgcolor);
+    border: 1px solid gray;                           /* Put an invisible border around the <body> so that we can get the rounded corners below */
+    border-radius: 16px;
+    margin: 0 auto;                                     /* Centre the body vertically within the page */ 
+    padding:1em;
+}
+body > *{
+    margin-bottom: 0.5em;
+}
+img{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+a{
+    color: var(--link-color);
+}
+main{
+    grid-area: middle-middle;
+    color:var(--main-color);
+    background-color: var(--main-bgcolor);
+    text-align: center;
+    border: 1px solid black; 
+    border-radius: 16px; 
+    margin-left: 1em;
+    font-size: calc(1.2*var(--base-font-size));
+}
+main ul li{
+    color:var(--maintext-color);
+    text-align: left;
+}
+canvas {
+    text-align: center;
+    border: 1px solid black; 
+    border-radius: 16px; 
+    margin: 1em;
+    padding: 1em;
+    width: 80%;
+}
+header{
+    grid-area: top;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: calc(2*var(--base-font-size));
+    text-align: center;
+    background-color: var(--main-color);
+    border: 1px solid black; 
+    border-radius: 16px; 
+}
+header > figure{
+    text-align: center;
+    width: 100%; 
+    margin: 0em;                                    /* Give the header figure 0em margin so that it will cover the whole header */
+}
+header > figure> img{                               /* Specify image width with a percentage to make it flexible */
+    width: 100%;
+}
+nav{
+    grid-area: middle-top;
+    font-size: calc(2*var(--base-font-size)); 
+    width: 80%;
+    border: 1px solid black; 
+    border-radius: 16px; 
+    background-color: var(--main-color);
+    padding: 2rem;
+    text-align: center;
+    margin: auto;    
+}
+nav > ul{                                           /* Use "list-style: none" to remove the bullet points from the lis within the ul in the nav */ 
+    list-style: none; 
+    padding: 0em;
+}
+nav li{
+    background-color: var(--base-color);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;                 /* Don't give any of the nav li elements apart from the first child (see below) so that they don't overlap with the bottom margin of the li above them */
+    border-radius: 16px;
+    text-align: center;
+    text-shadow: 2px 1px black;
+    padding: 0.5em;
+}
+nav li:first-child{
+    border-top: 1px solid black;
+}
+nav a{
+    display: block; 
+    text-decoration: none;
+    color:var(--navtext-color);
+}
+p a{
+    background-color: var(--base-color);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;                 /* Don't give any of the nav li elements apart from the first child (see below) so that they don't overlap with the bottom margin of the li above them */
+    border-radius: 16px;
+    text-align: center;
+    text-shadow: 2px 1px black;
+    padding: 0.5em;
+    display: block;
+    text-decoration: none;
+    color:var(--navtext-color);
+}
+td a{
+    background-color: var(--base-color);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;                 /* Don't give any of the nav li elements apart from the first child (see below) so that they don't overlap with the bottom margin of the li above them */
+    border-radius: 16px;
+    text-align: center;
+    padding: 0.5em;
+    display: block;
+    text-decoration: none;
+    color:var(--navtext-color);
+}
+section{
+    display:inline-block;
+    width:90%;
+    font-size: calc(1.5*var(--base-font-size));
+    color:var(--main-color);
+    background-color:var(--base-color);
+    border: 1px solid black;
+    border-radius: 16px;
+    box-shadow: 0.5em 0.5em black;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom:2em;
+}
+figure{
+    margin-top: 0.5em;
+}
+h1{
+    font-size: calc(3*var(--base-font-size));
+    color: var(--maintext-color);
+    text-align: center;
+    text-shadow: 2px 1px black;
+    width: 100%;
+}
+h2{
+    font-size: calc(2*var(--base-font-size));
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-shadow: 2px 1px black;
+    color: var(--navtext-color);
+}
+form {
+    color:var(--maintext-color);
+}
+form ul {
+    color:var(--maintext-color);
+    list-style: none;
+}
+p{
+    font-size: calc(1.5*var(--base-font-size));
+    text-align: left;
+    line-height: 160%;
+    word-spacing: 0.25em;
+    text-shadow: 2px 1px black;
+    text-align: center;
+    padding: 1em;
+    color: var(--maintext-color);
+}
+img + figcaption{
+    font-size: calc(0.3 *var(--base-font-size));
+}
+iframe + figcaption{
+    font-size: calc(0.8*var(--base-font-size));
+    color: var(--maintext-color);
+}
+header figcaption{
+    font-size: calc(0.1*var(--base-font-size));
+}
+iframe{
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    width:100%;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+h3{
+    font-size: calc(2*var(--base-font-size));
+    text-align: center;
+    text-shadow: 2px 1px black;
+    margin: 0.5em;
+    color: var(--navtext-color);
+}
+table{
+    width: 80%;
+    padding: 1em;
+    font-size: calc(1*var(--base-font-size));
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+td, tr, th, caption{
+    border: 1px solid black;
+}
+caption{
+    font-size: calc(2.5*var(--base-font-size));
+    background-color: var(--main-color);
+    color: var(--navtext-color);
+    padding: 0.25em;
+}
+th{
+    font-size: calc(var(--base-font-size));
+    background-color: var(--base-bgcolor);
+    color: var(--maintext-color);
+    padding: 0.25em;
+}
+th[colspan]{                                        /* Select all th elements that have a colspan to give them a different look from the other headings in the table */
+    color: var(--maintext-color);
+}
+td{
+    background-color: white;
+    color: black;
+}
+tr{
+    margin: auto;
+    width: 80%;
+}
+table a{
+    text-decoration: none;
+    display: block;
+}
+tr:first-child > th{                                /* Select all th elements that are children of tr elements that are the first child of they're parent to format the main headings at the top of the table differently to the other headings further down the table */
+    font-size: calc(2*var(--base-font-size));
+    color: var(--navtext-color);
+}
+aside{
+    grid-area: middle-bottom;
+    justify-self: center;
+    background-color: var(--base-bgcolor);
+    color:var(--maintext-color)
+}
+aside p{
+    font-size: calc(1*var(--base-font-size));
+    text-align: center;
+    color: var(--maintext-color);
+}
+aside h1{
+    font-size: calc(2*var(--base-font-size));
+}
+p{
+    font-size: calc(1*var(--base-font-size));
+}
+article{
+    border: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 1em;
+    border-radius: 16px;
+    box-shadow: 0.25em 0.25em black;
+    background-color: var(--main-color);
+}
+article a{
+    text-decoration: none;
+}
+article:first-child{
+    border-top: 1px solid black;
+}
+footer{
+    grid-area: bottom;
+    border: 1px solid black;
+    border-radius: 16px;
+    background-color: var(--navtext-color);
+}
+footer p{
+    font-size: calc(0.3*var(--base-font-size));
+}
+@media screen and (min-width:1000px){           
+    body{
+        display:grid;
+        grid-template-columns: 0.5fr 3fr 0.5fr; 
+        grid-template-areas:                        /* Define grid areas for the body of all pages when the device screen has a min. width of 1700px - 3 column layout */
+            "top top top"
+            "middle-left middle-middle middle-right"
+            "bottom bottom bottom"; 
+    }
+    img{                                            /* make images flexible by defining their width with a percentage */
+        width: 80%;
+    }
+    main{
+        grid-area: middle-middle;
+    }
+    nav{
+        grid-area: middle-left;
+    }
+    nav li{
+        background-color: var(--base-bgcolor);
+    }
+    @media (hover:hover){                           /* if the device viewing the page does have the ability to hover, when they hover on li elements give them a vox shadow, make them 5% bigger and change their background colour */
+        li:hover{
+            box-shadow: 0.3em 0.3em black;
+            transform: scale(1.05);
+            background-color: var(--base-color);
+        }
+    }
+    @media (hover:hover){                           /* if the device viewing the page does have the ability to hover, when they hover on li elements give them a vox shadow, make them 5% bigger and change their background colour */
+        td a:hover{
+            transform: scale(1.05);
+            background-color: var(--base-color);
+        }
+    }
+    h1{
+        font-size: calc(4*var(--base-font-size));
+    }
+    h2{
+        font-size: calc(3*var(--base-font-size));
+    }
+    section > figure{
+        padding: 0.7em;
+        margin-top: 1.5;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+    aside{
+        grid-area: middle-right;
+    }
+}

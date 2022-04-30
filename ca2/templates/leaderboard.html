@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+
+{% block header_content %} 
+<header>
+    <figure><img src="{{ url_for('static', filename='horses.jpeg') }}" alt="A picture of some tools" title="All The Kings Horses"/></figure>
+    <h1>Leaderboard</h1>
+    <h2>Want To Overthrow The King?</h2>
+</header>
+{% endblock %}
+
+{% block main_content %} 
+
+    <h1>Leaderboard</h1>
+
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>Score</th>
+                    
+            </tr>
+        {% for scores in leaderboard %}               
+            <tr>
+                <td>{{ scores["user_id"] }}</td>
+                <td>{{ scores["score"] }}</td>          
+                                                          
+            </tr>
+        {% endfor %}                            
+        </table> 
+            
+{% endblock %}

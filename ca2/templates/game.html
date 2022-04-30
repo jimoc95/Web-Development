@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>ca2</title>
+        <script src="{{ url_for('static', filename='king.js') }} " type="module"></script> <!-- link to JavaScript -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    </head>    
+    <nav>
+        <ul>
+            {% if g.user %}     <!-- can use g.user here because it is global - if g.user is not None (i.e. you are logged in) it will display g.user and a link to the logout route-->
+            <li>User id: {{ g.user }}</li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% elif g.admin %}     <!-- can use g.user here because it is global - if g.user is not None (i.e. you are logged in) it will display g.user and a link to the logout route-->
+            <li>Admin id: {{ g.admin }}</li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}          <!-- if it is None it will display 2 hyperlinks - one to take you to the register page and one to take you to the login page-->
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+        </ul>
+        
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('game') }}">PLAY!</a></li>
+        </ul>
+    </nav> 
+    {% block main_content %}                                         
+    <body>   
+        <main>
+            
+            <canvas width="800" height="480"></canvas>
+            <h1 id="outcome"></h1>
+       
+        </main>                                              
+    </body>
+    {% endblock %}
+</html>

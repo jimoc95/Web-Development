@@ -1,0 +1,56 @@
+<!DOCTYPE html>  
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>All The Kings Horses</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    </head>
+    <body>
+        {% block header_content %}
+        <header>
+            <figure><img src="{{ url_for('static', filename='horses.jpeg') }}" alt="A picture of some tools" title="All The Kings Horses"/></figure>
+            <h1>All The Kings Horses</h1>
+            <h2>Can You Catch Them All?</h2>
+        </header>
+        {% endblock %}
+        <nav>
+            <ul>
+                {% if g.user %}     <!-- can use g.user here because it is global - if g.user is not None (i.e. you are logged in) it will display g.user and a link to the logout route-->
+                <li>User id: {{ g.user }}</li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% elif g.admin %}     <!-- can use g.user here because it is global - if g.user is not None (i.e. you are logged in) it will display g.user and a link to the logout route-->
+                <li>Admin id: {{ g.admin }}</li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}          <!-- if it is None it will display 2 hyperlinks - one to take you to the register page and one to take you to the login page-->
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+            </ul>
+            
+            <ul>
+                <li><a href="{{ url_for('game') }}">PLAY!</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1>Game Instructions</h1>
+            <ul>
+                <li>The aim of the game is to catch as many horses as you can before the enemies catch you.</li>
+                <li>The horses run away from the player when they get a certain distance to the player.</li>
+                <li>The enemies will begin to follow the player around the canvas once they are a certain distance from the player.</li>
+                <li>Every time you collect a ruby the player's speed is increased</li>
+                <li>Every time you catch a horse another enemy is added.</li>
+                <li>Players, enemies and horses are all rebounded from the objects on the map (hole, walls, castle, rocks)</li>
+                <li>Once you have been caught the game will give you your score (The number of horses you have caught before the enemies catch you).</li>
+            </ul>
+        </main>   
+        <footer>
+            <p>
+                horse-brown.png - "[LPC] Horses" Artist: bluecarrot16 License: CC-BY 3.0 / GPL 3.0 / GPL 2.0 / OGA-BY 3.0 Please link to opengameart: http://opengameart.org/content/lpc-horses
+                enemy_walk.png - https://chasersgaming.itch.io/rpgcharactervigilantenes
+                castle.gif - Castle of Kestrels: https://opengameart.org/content/the-castle-of-kestrels Author : Spring Spring
+                overworld - Credit me as Buch and link back either to my OGA profile page or to http://blog-buch.rhcloud.com, and credit Jeffrey Kern as the committer and creative consultant
+                ruby.png - Author: Clint Bellanger - http://clintbellanger.net 
+            </p>
+        </footer>
+    </body>                     
+</html>
