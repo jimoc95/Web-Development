@@ -5,6 +5,7 @@ wd1 is the first website I ever created, the subject is the Classic Mini because
 
 ca1 is a website for a hardware shop.
 Link: https://cs1.ucc.ie/~jaoc2/cgi-bin/ca1/run.py
+
 The web page allows you to log in as a user or as an admin.
 As a user you can add items to your cart, and go to the checkout where you will get a summary of your order and select your preffered delivery method.
 You can also see your previous orders and leave reviews of products as a logged in user.
