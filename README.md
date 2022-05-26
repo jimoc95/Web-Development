@@ -12,4 +12,6 @@ You can also see your previous orders and leave reviews of products as a logged 
 When logged in as an admin you can add products to the catalog, see orders which have been placed by customers and review and alter stock levels of products.
 
 ca2 is a website for a game called "All The Kings Horses".
+Link: https://cs1.ucc.ie/~jaoc2/cgi-bin/ca2/run.py
+
 In the game you try to catch as many horses as you can before getting caught by your enemies.
