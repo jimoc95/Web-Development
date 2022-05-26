@@ -18,4 +18,5 @@ ca2 is a website for a game called "All The Kings Horses".
 
 Link: https://cs1.ucc.ie/~jaoc2/cgi-bin/ca2/run.py
 
-In the game you try to catch as many horses as you can before getting caught by your enemies.
+This is a top-down game in which you try to catch as many horses as you can before getting caught by your enemies.
+The game keeps a count of how many horses you have caught and adds an enemy each time.
