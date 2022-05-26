@@ -1,5 +1,5 @@
 # Web-Development
-This repository contains websites developed in the Web Development during the course of my HDIP in Computer Science at UCC.
+This repository contains websites developed in the Web Development module of my HDIP in Computer Science at UCC.
 
 wd1 is the first website I ever created, the subject is the Classic Mini because I am passionate about classic cars and I own a Classic Mini.
 
