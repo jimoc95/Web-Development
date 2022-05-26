@@ -4,6 +4,7 @@ This repository contains websites developed in the Web Development during the co
 wd1 is the first website I ever created, the subject is the Classic Mini because I am passionate about classic cars and I own a Classic Mini.
 
 ca1 is a website for a hardware shop.
+
 Link: https://cs1.ucc.ie/~jaoc2/cgi-bin/ca1/run.py
 
 The web page allows you to log in as a user or as an admin.
@@ -12,6 +13,7 @@ You can also see your previous orders and leave reviews of products as a logged 
 When logged in as an admin you can add products to the catalog, see orders which have been placed by customers and review and alter stock levels of products.
 
 ca2 is a website for a game called "All The Kings Horses".
+
 Link: https://cs1.ucc.ie/~jaoc2/cgi-bin/ca2/run.py
 
 In the game you try to catch as many horses as you can before getting caught by your enemies.
